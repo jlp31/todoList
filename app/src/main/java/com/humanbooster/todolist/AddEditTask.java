@@ -23,7 +23,7 @@ public class AddEditTask extends Activity {
         title = (EditText) findViewById(R.id.input_title);
         desc = (EditText) findViewById(R.id.input_desc);
 
-        if(getIntent().getSerializableExtra("tasksdsds") != null){
+        if(getIntent().getSerializableExtra("tasks") != null){
             Task task = (Task) getIntent().getSerializableExtra("task");
             title.setText(task.getTitle());
             desc.setText(task.getDesc());
