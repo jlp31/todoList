@@ -14,36 +14,38 @@ import java.util.List;
 /**
  * Created by martin on 02/01/16.
  */
-public class TaskAdapter extends ArrayAdapter<Task>{
+public class TaskAdapter extends ArrayAdapter<Task>
+   {
 
-    private List<Task> tasks;
+   private List<Task> tasks ;
 
-    public TaskAdapter(Context context, List<Task> tasks) {
-        super(context, R.layout.todo_item, tasks);
-        this.tasks = tasks;
-    }
+   public TaskAdapter(Context context, List<Task> tasks)
+      {
+      super(context, R.layout.todo_item, tasks) ;
+      this.tasks = tasks ;
+      }
 
-    public void setTasks(List<Task> tasks){
-        this.tasks.clear();
-        this.tasks.addAll(tasks);
-        this.notifyDataSetChanged();
-    }
+   public void setTasks(List<Task> tasks)
+      {
+      this.tasks.clear() ;
+      this.tasks.addAll(tasks) ;
+      this.notifyDataSetChanged() ;
+      }
 
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View row = inflater.inflate(R.layout.todo_item, parent, false);
+   @Override
+   public View getView(int position, View convertView, ViewGroup parent)
+      {
+      LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+      View row = inflater.inflate(R.layout.todo_item, parent, false) ;
 
-        TextView title = (TextView) row.findViewById(R.id.title);
-        TextView desc = (TextView) row.findViewById(R.id.desc);
+      TextView title = (TextView) row.findViewById(R.id.title) ;
+      TextView desc = (TextView) row.findViewById(R.id.desc) ;
 
-        Task task = getItem(position);
+      Task task = getItem(position) ;
 
-        title.setText(task.getTitle());
-        desc.setText(task.getDesc());
+      title.setText(task.getTitle()) ;
+      desc.setText(task.getDesc()) ;
 
-        return row;
-    }
-
-
-}
+      return row ;
+      }
+   }
