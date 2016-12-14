@@ -23,7 +23,7 @@ public class AddEditTask extends Activity {
         title = (EditText) findViewById(R.id.input_title);
         desc = (EditText) findViewById(R.id.input_desc);
 
-        if(getIntent().getSerializableExtra("tasks") != null){
+        if (getIntent().getSerializableExtra("task") != null) {
             Task task = (Task) getIntent().getSerializableExtra("task");
             title.setText(task.getTitle());
             desc.setText(task.getDesc());
@@ -31,13 +31,11 @@ public class AddEditTask extends Activity {
         }
     }
 
-    public void onSave(View v){
+    public void onSave(View v) {
         Task task = new Task(currentEditId, title.getText().toString(), desc.getText().toString());
         Intent result = new Intent();
         result.putExtra("task", task);
         setResult(RESULT_OK, result);
         finish();
     }
-
-
 }
